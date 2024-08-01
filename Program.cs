@@ -15,8 +15,9 @@ class Program
 
             Console.WriteLine("A. Add new note" +
                                 "\nB. View notes" +
-                                "\nC. Delete note" + 
-                                "\nD. Exit" +
+                                "\nC. Edit note" + 
+                                "\nD. Delete note" +
+                                "\nE. Exit" +
                                 "\nAnswer: ");
 
             choice = Console.ReadLine().ToLower();
@@ -35,11 +36,14 @@ class Program
             else if (choice == "c")
             {
                 Console.Clear();
-                noteLib.ViewNotes();
-                noteLib.DeleteNote();
-
+                noteLib.EditNote();
             }
             else if (choice == "d")
+            {
+                Console.Clear();
+                noteLib.DeleteNote();
+            }
+            else if (choice == "e")
             {
                 run = false;
                 Console.Clear();

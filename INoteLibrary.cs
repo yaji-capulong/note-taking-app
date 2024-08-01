@@ -10,6 +10,7 @@ namespace NoteTakingApp
     {
         void AddNewNote();
         void ViewNotes();
+        void EditNote();
         void DeleteNote();
     }
 }
