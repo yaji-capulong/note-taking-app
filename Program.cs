@@ -7,18 +7,36 @@ class Program
         INoteLibrary noteLib = new NoteSystem();
         string choice = string.Empty;
         bool run = true;
+        Admin admin = new Admin() { Username = "yaj", Password = "pass1"};
+        IUserLibrary userLib = new AdminSystem();
 
         while (run) {
+
             Console.Clear();
 
-            Console.WriteLine("Welcome to Notes. Choose an option:");
+            Console.WriteLine("Welcome to Notes. Log-In");
 
-            Console.WriteLine("A. Add new note" +
-                                "\nB. View notes" +
-                                "\nC. Edit note" + 
-                                "\nD. Delete note" +
-                                "\nE. Exit" +
-                                "\nAnswer: ");
+            //Console.WriteLine("Welcome to Notes. Choose an option:");
+
+            Console.Write("Username: ");
+
+            string userName = Console.ReadLine();
+
+            Console.Write("Password: ");
+
+            string password = Console.ReadLine();
+
+            if (userName == admin.Username && password == admin.Password)
+            {
+                userLib.AdminMainPage();
+            }
+
+            //Console.WriteLine("A. Add new note" +
+            //                    "\nB. View notes" +
+            //                    "\nC. Edit note" + 
+            //                    "\nD. Delete note" +
+            //                    "\nE. Exit" +
+            //                    "\nAnswer: ");
 
             choice = Console.ReadLine().ToLower();
 

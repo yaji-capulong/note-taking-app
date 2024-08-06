@@ -10,6 +10,7 @@ namespace NoteTakingApp
     {
         public string NoteTitle { get; set; }
         public string NoteContent { get; set; }
+        public string NoteAuthor { get; set; }
 
         public override string ToString()
         {
