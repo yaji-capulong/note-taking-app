@@ -54,11 +54,53 @@ namespace NoteTakingApp
         }
         public void ViewUsers()
         {
-
+            if (users.Count == 0)
+            {
+                Console.WriteLine("No users available.");
+            }
+            else
+            {
+                Console.WriteLine("USERS\n");
+                foreach (var user in users)
+                {
+                    Console.WriteLine(user);
+                }
+            }
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadKey();
         }
         public void DeleteUser()
         {
+            if (users.Count == 0)
+            {
+                Console.WriteLine("No user available.");
+            }
+            else
+            {
+                Console.WriteLine("USERS\n");
+                foreach (var user in users)
+                {
+                    Console.WriteLine(user);
+                }
+                Console.Write("\nEnter username to delete: ");
+                string titleToDelete = Console.ReadLine();
 
+                var userRemove = users.FirstOrDefault(b => b.Username.Equals(titleToDelete, StringComparison.OrdinalIgnoreCase));
+
+                if (userRemove != null)
+                {
+                    users.Remove(userRemove);
+                    Console.WriteLine("\nUser deleted successfully!");
+                }
+                else
+                {
+                    Console.WriteLine("User not found.");
+                }
+            }
+
+
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadKey();
         }
     }
 }
